@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="roomScript.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="canvas">
+        <p class='Label' id='Title'>Room code: </p>
+        <div id='playersTable'></div>
+        <button id='leaveRoomButton' class='button' onclick='LeaveRoom()'>Излез от стая</button>
+        <button id='readyButton' class='button' onclick='Ready()'>Старт</button>
+
+    </div>
+</body>
+</html>

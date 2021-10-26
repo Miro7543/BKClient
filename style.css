@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#canvas
+{
+    display: block;
+    width: 40%;
+    margin: auto;
+    margin-top: 10vh;
+    height: 80vh;
+    border-radius: 10px;
+    background-color: dimgray;
+    overflow: auto;
+    color: rgb(114, 109, 109);
+}
+
+.Label
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color:white;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#Title
+{
+    font-size: 40px;
+}
+
+.input,button{
+    width: 60%;
+    display: block;
+    border:none;
+    border-radius: 7px;
+    color:white;
+    font-size: 15px;
+    height: 40px;
+    margin:auto;
+    margin-top: 25px;
+}
+
+.input{
+    box-sizing: border-box;
+    background-color: rgb(78, 78, 78);
+    padding: 0 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.button
+{
+    font-size: 19px;
+
+}
+
+#joinRoomButton
+{
+    background-color: rgb(83, 120, 231);
+}
+#joinRoomButton:focus,#joinRoomButton:hover
+{
+    background-color: rgb(60, 94, 199);
+}
+
+
+
+#createRoomButton
+{
+    background-color: yellowgreen;
+}
+#createRoomButton:focus, #createRoomButton:hover
+{
+    background-color: rgb(131, 182, 30);
+}
+/*
+ */
+
+
+.input,.button:focus
+{
+    border:none;
+    outline: none;
+}
+
+/*InRoom--------------------------*/
+#playersTable
+{
+    width: 80%;
+    height: 60%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius:8px;
+    background-color: rgb(90, 90, 90);
+    overflow: auto;
+}
+
+#leaveRoomButton
+{
+    background-color: rgb(238, 79, 79);
+}
+
+#leaveRoomButton:hover
+{
+    background-color: rgb(223, 74, 74);
+}
+
+#readyButton
+{
+    background-color: yellowgreen;
+}
+#readyButton:hover
+{
+    background-color: rgb(131, 182, 30);
+}
+
+#playersTable div{
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+}
+
+.ReadyPlayer
+{
+    color:yellowgreen;
+}
