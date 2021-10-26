@@ -86,7 +86,7 @@
     outline: none;
 }
 
-/*InRoom--------------------------*/
+/*InRoom_________________________________________________________________________________________________________*/
 #playersTable
 {
     width: 80%;
@@ -130,4 +130,181 @@
 .ReadyPlayer
 {
     color:yellowgreen;
+}
+/*InGame_________________________________________________________________________________________________________*/
+
+
+#canvas1
+{
+    display: block;
+    width: 40%;
+    margin: auto;
+    margin-top: 10vh;
+    height: 80vh;
+    border-radius: 10px;
+    background-color: dimgray;
+    overflow: auto;
+    color: rgb(114, 109, 109);
+}
+
+#canvas1 div
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-100%);
+}
+
+#GameCanvas
+{
+    display:none;
+
+    padding-bottom: 50px;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    margin-top: 10vh;
+    height: 80vh;
+    border-radius: 10px;
+    background-color: dimgray;
+    overflow: auto;
+    color: rgb(114, 109, 109);
+}
+
+#TurnTitle
+{
+    display: block;
+    color:white;
+    font-size: 50px;
+    font-weight: 500;
+    margin: 20px 0;
+    text-align: center;
+}
+
+#ActiveCont
+{
+    display:flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+#inputCont,#numCont
+{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 100px;
+}
+
+#numCont p
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color:white;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+
+}
+
+#Title1,#Title2
+{
+    color:white;
+    font-size: 40px;
+    font-weight: 500;
+    margin:25px 0;
+    text-align: center;
+}
+
+#Table1,#Table2
+{
+    /* background-color: yellowgreen; */
+    display: block;
+    width: 95%;
+    margin: auto;
+    border-radius:10px;
+    background-color: rgb(90, 90, 90);
+    overflow: auto;
+    flex-grow: 1;
+}
+
+.Container
+{
+    width: 45%;
+    /* background-color: tomato; */
+    display: flex;
+    flex-direction: column;
+}
+
+#inputCont 
+{
+    display: flex;
+    margin-top: 20px;
+}
+#numCont
+{
+    margin-top: 20px;
+}
+
+#SubmitInput
+{
+    margin: auto;
+    width: 85%;
+    height: 70%;
+}
+
+#SubmitButton
+{
+    width: 85%;
+    height: 70%;
+    margin: auto;
+    color:white;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    background-color: yellowgreen;
+}
+
+#SubmitButton:hover{
+    background-color: rgb(131, 182, 30);
+}
+
+#inputCont div
+{
+    width: 50%;
+    height: 100%;
+    display:flex ;
+}
+
+.Record
+{
+    width: 100%;
+    height: 60px;
+    color:white;
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.guessNum
+{
+    flex-grow: 1;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.cowCount,.bullCount
+{
+    margin: 0 8px;
+}
+
+.bullCount
+{
+    margin-right: 30px;
+}
+
+.Record img{
+    width: 50px;
+    height: 50px;
 }

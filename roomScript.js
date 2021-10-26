@@ -1,29 +1,36 @@
-const socket = io("https://bikove-kravi.herokuapp.com/");
+const socket = io(PATH);
 let RoomInfo;
 let Token;
 
 socket.on('connect',()=>{
     // console.log(socket.id)
     UpdateToken();
+    loadInfo();    
+    if(Token!=RoomInfo.creator.token)
+    {
+        document.getElementById('readyButton').style.display='none';
+    }
+
 })
 
 socket.on('updatePlayers',(roomInfo)=>{
     FillPlayers(roomInfo);
 })
 
+socket.on('startGame',()=>
+{
+    sessionStorage.setItem('RoomInfo',JSON.stringify(RoomInfo));
+    window.location.href='./InGame.html'
+    console.log('game started')
+})
+
 window.onload=function()
 {
-    loadInfo();
 }
 
 function UpdateToken()
 {
     Token=sessionStorage.getItem('id');
-    if(Token==null)
-    {
-        Token=ID();
-        sessionStorage.setItem('id',token);
-    }
     socket.emit('update',Token,socket.id);
 }
 
@@ -32,6 +39,7 @@ function loadInfo()
     let title=document.getElementById('Title');
     let obj=JSON.parse(sessionStorage.getItem('roomCode'))
     if(obj==null)window.location.href='./index.html'
+    RoomInfo=obj;
     try {
         title.innerHTML+=obj.code;        
         FillPlayers(obj);
@@ -51,6 +59,7 @@ function FillPlayers(obj)
     obj.players.forEach(p=>{
         let newDiv=document.createElement('div')
         newDiv.innerHTML=p.name;
+        if(p.ready)newDiv.innerHTML+='[Ready]';
         table.appendChild(newDiv);
     })
 }
@@ -61,8 +70,7 @@ function LeaveRoom()
     window.location.href='./index.html';
 }
 
-function Ready()
+function Start()
 {
-
-    socket.emit('Ready',Token,)
+    socket.emit('Start',RoomInfo.code)
 }

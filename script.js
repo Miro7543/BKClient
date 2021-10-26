@@ -1,7 +1,7 @@
-const socket = io("https://bikove-kravi.herokuapp.com/");
+const socket = io(PATH);
 let Token;
 socket.on('connect',()=>{
-    console.log(socket.id)
+    // console.log(socket.id)
     UpdateToken();
 })
 
