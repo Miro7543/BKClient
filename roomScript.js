@@ -1,4 +1,4 @@
-const socket = io(PATH);
+const socket = io(URL);
 let RoomInfo;
 let Token;
 

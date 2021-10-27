@@ -1,4 +1,4 @@
-const socket = io(PATH);
+const socket = io(URL);
 let Token;
 socket.on('connect',()=>{
     // console.log(socket.id)
