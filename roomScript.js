@@ -1,15 +1,20 @@
 const socket = io(URL);
 let RoomInfo;
 let Token;
+let Indicator;
 
 socket.on('connect',()=>{
     // console.log(socket.id)
     UpdateToken();
-    loadInfo();    
+    loadInfo();   
+    Indicator.style.backgroundColor='yellowgreen';
     if(Token!=RoomInfo.creator.token)
     {
         document.getElementById('readyButton').style.display='none';
     }
+})
+socket.on('disconnect',()=>{
+    Indicator.style.backgroundColor='red';
 
 })
 
@@ -26,6 +31,7 @@ socket.on('startGame',()=>
 
 window.onload=function()
 {
+    Indicator=document.getElementById('OnlineIndicator');
 }
 
 function UpdateToken()

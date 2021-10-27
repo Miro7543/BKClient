@@ -1,8 +1,15 @@
 const socket = io(URL);
 let Token;
+let Indicator;
 socket.on('connect',()=>{
     // console.log(socket.id)
+    Indicator.style.backgroundColor='yellowgreen';
     UpdateToken();
+})
+
+socket.on('disconnect',()=>{
+    Indicator.style.backgroundColor='red';
+
 })
 
 function checkForRoom(code,name) 
@@ -54,6 +61,7 @@ function joinRoom()
 
 window.onload=async function()
 {
+    Indicator=document.getElementById('OnlineIndicator');
 }
 
 function UpdateToken()

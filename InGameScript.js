@@ -6,11 +6,18 @@ let MyNumber;
 let submitButton;
 let TitleTurn;
 let MyTurn;
+let Indicator;
 
 socket.on('connect',()=>{
+    Indicator.style.backgroundColor='yellowgreen';
     // console.log(socket.id)
     UpdateToken();
 })
+socket.on('disconnect',()=>{
+    Indicator.style.backgroundColor='red';
+
+})
+
 
 socket.on('startGuessing',()=>{
     document.getElementById('canvas1').style.display='none';
@@ -65,6 +72,7 @@ function UpdateToken()
 }
 
 window.onload=function(){
+    Indicator=document.getElementById('OnlineIndicator');
     RoomInfo=JSON.parse(sessionStorage.getItem('RoomInfo'));
     if(RoomInfo==null)window.location.href='./index.html';
     OtherPlayer=RoomInfo.players.find(p=>{return p.token!=Token;});

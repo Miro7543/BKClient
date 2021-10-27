@@ -3,6 +3,19 @@
     padding: 0;
 }
 
+#OnlineIndicator
+{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    width:10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+}
+
 #canvas
 {
     display: block;
